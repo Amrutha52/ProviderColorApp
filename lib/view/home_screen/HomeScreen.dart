@@ -16,9 +16,9 @@ class _HomeScreenState extends State<HomeScreen>
   @override
   Widget build(BuildContext context)
   {
-    var homeProvider = Provider.of<HomeScreenController>(context);
+    //var homeProvider = Provider.of<HomeScreenController>(context);
 
-    return Scaffold(
+    return Consumer<HomeScreenController>(builder: (context, homeProvider, child) => Scaffold(
       backgroundColor: homeProvider.scaffoldBg,
       body: Center(
         child: Column(
@@ -67,6 +67,6 @@ class _HomeScreenState extends State<HomeScreen>
           ],
         ),
       ),
-    );
+    ));
   }
 }
